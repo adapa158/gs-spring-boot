@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aks-4ddc"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aks-4ddc"
+  template:
+    metadata:
+      labels:
+        app: "aks-4ddc"
+    spec:
+      containers:
+        - name: "aks-4ddc"
+          image: "acr1234567896.azurecr.io/aks"
+          ports:
+          - containerPort: 80
